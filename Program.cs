@@ -1,5 +1,5 @@
-using SistemaNotas.Repositorios;
-using SistemaNotas.Servicios;
+using Farmaco.Repositorios;
+using Farmaco.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +8,20 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 // Inyección de dependencias
-builder.Services.AddSingleton<IRepositorioEstudiantes, RepositorioEstudiantesMemoria>();
-builder.Services.AddScoped<ServicioNotas>();
+builder.Services.AddSingleton<IReCliente, ReClienteRam>();
+builder.Services.AddScoped<ServicioCliente>();
+
+builder.Services.AddSingleton<IReEmpleado, ReEmpleadoRam>();
+builder.Services.AddScoped<ServicioEmpleados>();
+
+builder.Services.AddSingleton<IReProducto, ReProductoRam>();
+builder.Services.AddScoped<ServicioProductos>();
+
+builder.Services.AddSingleton<IReProveedor, ReProveedorRam>();
+builder.Services.AddScoped<ServicioProveedores>();
+
+builder.Services.AddSingleton<IReVenta, ReVentaRam>();
+builder.Services.AddScoped<ServicioVentas>();
 
 var app = builder.Build();
 

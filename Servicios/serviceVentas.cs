@@ -49,6 +49,10 @@ public class ServicioVentas(IReVenta repositorio)
         return nueva;
     }
 
+    public bool ExisteVenta(string nombreCliente)
+    {
+        return repositorio.BuscarPorCliente(nombreCliente) != null;
+    }
     public Ventas? Actualizar(string nombreCliente, UpdateVenta request)
     {
         Ventas? venta = repositorio.BuscarPorCliente(nombreCliente);
@@ -64,8 +68,8 @@ public class ServicioVentas(IReVenta repositorio)
         return venta;
     }
 
-    public bool Eliminar(string nombreCliente)
-    {
-        return repositorio.EliminarPorCliente(nombreCliente);
+    public bool Eliminar(string NombreCliente)
+    {   
+        return repositorio.EliminarPorCliente(NombreCliente);
     }
 }

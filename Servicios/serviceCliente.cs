@@ -4,7 +4,7 @@ using Farmaco.Repositorios;
 
 namespace Farmaco.Servicios;
 
-public class ServiceCliente(IReCliente repositorio)
+public class ServicioCliente(IReCliente repositorio)
 {
 public List<Cliente> ListarTodos()
     {
@@ -18,7 +18,7 @@ public List<Cliente> ListarTodos()
 
     public List<Cliente> ListarClientesFrecuentes()
     {
-        return repositorio.ListarTodos().Where(c => c.PuntosConsegudos >= 100).ToList();
+        return repositorio.ListarTodos().Where(c => c.PuntosConseguidos >= 100).ToList();
     }
 
     public double CalcularPromedioPuntos()
@@ -28,7 +28,7 @@ public List<Cliente> ListarTodos()
         {
             return 0;
         }
-        return todos.Average(c => c.PuntosConsegudos);
+        return todos.Average(c => c.PuntosConseguidos);
     }
 
     public bool PuntosSonValidos(int puntos)

@@ -2,11 +2,11 @@ namespace Farmaco.Modelos;
 
 public class Cliente : Persona
 {
-    public int PuntosConsegudos { get; private set; }
+    public int PuntosConseguidos { get; private set; }
     public Cliente(string dni, string nombre, string apellido, string correo,
-    string telefono,int puntosConsegudos) : base(dni, nombre, apellido, correo, telefono)
+    string telefono,int puntosConseguidos) : base(dni, nombre, apellido, correo, telefono)
     {
-        SumarPuntos(puntosConsegudos);
+        SumarPuntos(puntosConseguidos);
     }
 
     public void SumarPuntos(int puntosAdicionales)
@@ -15,7 +15,7 @@ public class Cliente : Persona
             {
                 throw new ArgumentException("Los puntos a sumar no pueden ser negativos.");
             }
-            PuntosConsegudos += puntosAdicionales;
+            PuntosConseguidos += puntosAdicionales;
         }
 
  

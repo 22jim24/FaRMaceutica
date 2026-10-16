@@ -6,10 +6,10 @@ public class ReProductoRam : IReProducto
 {
     private readonly List<Producto> productos =
     [
-        new("Paracetamol 500mg", 2.50m, 100),
-        new("Ibuprofeno 400mg", 3.00m, 80),
-        new("Amoxicilina 500mg", 8.50m, 40),
-        new("Jarabe Panadol", 15.00m, 4)
+        new("Paracetamol", 2.50m, 100),
+        new("Ibuprofeno", 3.00m, 80),
+        new("Amoxicilina", 8.50m, 40),
+        new("Iblino", 15.00m, 4)
     ];
 
     public void Agregar(Producto producto)
